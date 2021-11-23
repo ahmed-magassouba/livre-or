@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/****************/
+/* Style hearder*/
+/****************/
+header {
+  display: flex;
+  background-color: #6c6c6c;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 65%;
+  margin: 10px;
+  
+}
+
+.child1 {
+  color: rgb(0, 26, 255);
+}
+
+.child2 {
+  display: flex;
+  justify-content: end;
+}
+
+.button {
+  height: 60px;
+  width: 80px;
+  border: #6c6c6c;
+  background-color: #6c6c6c;
+  cursor: pointer;
+  font-weight: bold;
+  color:blue
+}
+
+.buttonactif {
+  height: 60px;
+  width: 80px;
+  background-color: whitesmoke;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/**************************/
+/* style page connexion */
+/************************/
+.sectioncon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 850px;
+}
+
+.formcon {
+  display: flex;
+  justify-content: center;
+  background-color:dimgrey ;
+}
+.fieldsetcon {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.messagealert {
+  text-align: center;
+  border: 1px solid black;
+  height: 80px;
+  padding: 30px;
+  margin-top: 10px;
+  background-color: rgb(145, 12, 12);
+  color: aliceblue;
+  border-radius: 10px;
+}
+.submitbutton {
+  background-color: blue;
+  color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: medium;
+  font-weight: bold;
+}
+.inputelmt{
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+}
+legend {
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+/**************************/
+/* style page commentaire */
+/************************/
+.formcommentaire{
+  display: flex;
+  justify-content: center;
+  height: 850px;
+}
+
+.formcom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment{
+  height: 200px;
+  width: 480px;
+  padding: 10px;
+  border-radius: 9px;
+  margin: 20px;
+
+}
+.element{
+  display: flex;
+  justify-content: space-between;
+  width: 480px;
+}
+.element1{
+  width: 200px;
+  border-radius: 10px;
+  height: 50px;
+  font-size: xx-large;
+  background-color: dodgerblue;
+  color: azure;
+}
+.element2{
+  width: 200px;
+  border-radius: 10px;
+  height: 50px;
+  font-size: xx-large;
+  background-color: red;
+  color: azure;
+}
+
+/****************/
+/* style footer */
+/****************/
+footer {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  background-color: rgb(230, 230, 230);
+  align-items: center;
+  
+}
