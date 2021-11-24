@@ -72,7 +72,7 @@ mysqli_close($bdd);
                 </div>
 
                 <div>
-                    <input class="submitbutton" type="submit" value="Connexion">
+                    <input class="submitbutton" type="submit" value="Valider mon inscription">
                 </div>
 
             </fieldset>

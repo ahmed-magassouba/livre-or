@@ -27,8 +27,8 @@ require_once 'function.php';
             <h1>Mon site</h1>
         </div>
         <div class="menu">
-            <div class="child1">
-                <h4 class="color"><?php if (!empty($_SESSION['user-connecte'])) {
+            <div >
+                <h4 class="head"><?php if (!empty($_SESSION['user-connecte'])) {
                                         echo 'Salut ' . $_SESSION["user-connecte"]["login"];
                                     }
                                     ?>

@@ -39,29 +39,27 @@ if (!empty($_POST['commentaire']) && isset($_POST['commentaire'])) {
 ?>
 <section class="formcommentaire">
 
-    <?php if ($message1) : ?><p class="messageok"> <?= $message1; ?></p>
-    <?php endif; ?>
+    <?php if ($message1) : ?><p class="messageok"> <?= $message1; ?></p> <?php endif; ?>
 
-    <?php if ($message) : ?><p class="messagealert"> <?= $message; ?></p>
-    <?php endif; ?>
+
+    <?php if ($message) : ?><p class="messagealert"> <?= $message; ?></p> <?php endif; ?>
+
 
     <form class="formcom" action="" method="POST">
-
-        <input class="comment" type="textarea" name="commentaire" id="commentaire" placeholder="Ecrivez votre commentaire">
-        <input class="element1" type="submit" name="submit" value="Publier">
-
+        <div>
+            <label for="commentaire"></label>
+            <textarea class="comment" name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Ecrivez votre commentaire"></textarea>
+        </div>
+        <!-- <input class="comment" type="textarea" name="commentaire" id="commentaire" placeholder="Ecrivez votre commentaire"> -->
+        <div>
+            <input class="element1" type="submit" name="submit" value="Publier">
+        </div>
     </form>
-
 
     <div>
         <a href="livre-or.php"><button class="element2">Annuler</button></a>
     </div>
 
-
-
 </section>
-<?php
 
-require 'footer.php';
-
-?>
+<?php require 'footer.php'; ?>

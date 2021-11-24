@@ -3,23 +3,32 @@
   margin: 0;
   padding: 0;
 }
+main{
+  background-color: rgb(201, 200, 200);
+}
 /****************/
 /* Style hearder*/
 /****************/
 header {
   display: flex;
-  background-color: #6c6c6c;
+  background-color: #beb8b8;
   justify-content: space-between;
   align-items: center;
   height: 60px;
+  background-color: #6c6c6c;
 }
+
+.head{
+  color: gold;
+}
+
+
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 65%;
   margin: 10px;
-  
 }
 
 .child1 {
@@ -38,14 +47,16 @@ header {
   background-color: #6c6c6c;
   cursor: pointer;
   font-weight: bold;
-  color:blue
+  color: white;
 }
 
 .buttonactif {
   height: 60px;
   width: 80px;
-  background-color: whitesmoke;
+  color: #6c6c6c;
   border-radius: 10px 10px 0px 0px;
+  background: #ffffff;
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #464242;
 }
 
 /**************************/
@@ -62,41 +73,42 @@ header {
 .formcon {
   display: flex;
   justify-content: center;
-  background-color:dimgrey ;
+  background-color: dimgrey;
 }
 .fieldsetcon {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   padding: 30px;
   border-radius: 10px;
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
 }
 
 .messagealert {
   text-align: center;
-  border: 1px solid black;
   height: 80px;
   padding: 30px;
   margin-top: 10px;
-  background-color: rgb(145, 12, 12);
+  background: linear-gradient(to bottom right, rgb(145, 12, 12), red);
   color: aliceblue;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
 }
 .messageok {
   text-align: center;
-  border: 1px solid black;
   height: 80px;
   padding: 30px;
   margin-top: 10px;
-  background-color: dodgerblue;
+  background: linear-gradient(to bottom right, dodgerblue, blue);
   color: aliceblue;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
 }
 .submitbutton {
-  background-color: blue;
+  background: linear-gradient(to bottom right, dodgerblue, blue);
   color: white;
   width: 200px;
   height: 40px;
@@ -104,8 +116,8 @@ header {
   font-size: medium;
   font-weight: bold;
 }
-.inputelmt{
-  width: 200px;
+.inputelmt {
+  width: 350px;
   height: 40px;
   border-radius: 5px;
 }
@@ -117,47 +129,51 @@ legend {
 /**************************/
 /* style page commentaire */
 /************************/
-.formcommentaire{
+.formcommentaire {
   display: flex;
- justify-content: center;
- height: 760px;
- align-items: center;
- flex-direction: column;
+  justify-content: center;
+  height: 760px;
+  align-items: center;
+  flex-direction: column;
 }
-.comment{
+.comment {
   height: 200px;
   width: 480px;
   padding: 10px;
-  border-radius: 9px;
   margin: 20px;
-
-} 
-.formcom{
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
+}
+.formcom {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
 }
 
-.element1{
+.element1 {
   width: 200px;
   border-radius: 10px;
   height: 50px;
   font-size: xx-large;
-  background-color: dodgerblue;
+  background: linear-gradient(to bottom right, dodgerblue, blue);
   color: azure;
   cursor: pointer;
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
 }
-.element2{
+.element2 {
   width: 200px;
   border-radius: 10px;
   height: 50px;
   font-size: xx-large;
-  background-color: red;
+  background: linear-gradient(to bottom right, rgb(145, 12, 12), red);
   color: azure;
   cursor: pointer;
-} 
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
+}
 
-.color{
+.color {
   color: blue;
 }
 
@@ -165,12 +181,12 @@ legend {
 /* style profil */
 /****************/
 
-.element3{
+.element3 {
   width: 150px;
   border-radius: 30px;
   height: 35px;
-  font-size:larger;
-  background-color: red;
+  font-size: larger;
+  background: linear-gradient(to bottom right, rgb(145, 12, 12), red);
   color: azure;
 }
 
@@ -186,43 +202,99 @@ legend {
 }
 
 /***************************/
-/* style page commentaire */
+/* style page index */
+/**************************/
+
+.child1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.lien {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  height: 80px;
+  align-items: center;
+  margin: 30px;
+  width: 400px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom right, slategrey, #666666);
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
+}
+
+.sectionindex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seajt{
+ 
+  display: flex;
+  justify-content: space-around;
+  padding: 60px;
+  flex-wrap: wrap;
+}
+
+.el{
+  text-align: center;
+  margin: 10px;
+}
+
+.textindex {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  height: 300px;
+  align-items: center;
+  margin: 30px;
+  width: 400px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom right, slategrey, #666666);
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
+}
+
+/***************************/
+/* style page livre or */
 /**************************/
 thead,
 tfoot {
-    background-color: #3f87a6;
-    color: #fff;
+  background-color: #3f87a6;
+  color: #fff;
 }
 
 tbody {
-    background-color: #e4f0f5;
+  background-color: #e4f0f5;
 }
 
 caption {
-    padding: 10px;
+  padding: 10px;
 }
 
 table {
-    border-collapse: collapse;
-    border: 2px solid rgb(200, 200, 200);
-    letter-spacing: 1px;
-    font-family: sans-serif;
-    font-size: .8rem;
-    margin: auto;
-    width: 40%;
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  margin: auto;
+  width: 40%;
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
 }
 
 td,
 th {
-    border: 1px solid rgb(190, 190, 190);
-    padding: 5px 10px;
-    height: 100px;
+  border: 1px solid rgb(190, 190, 190);
+  padding: 5px 10px;
+  height: 100px;
 }
 
 td {
-    text-align: center;
+  text-align: center;
 }
-.element4{
+.element4 {
   width: 400px;
   border-radius: 10px;
   height: 50px;
@@ -230,8 +302,8 @@ td {
   background: linear-gradient(to bottom right, #3f87a6, #fff);
   color: azure;
   cursor: pointer;
-} 
-
+  box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
+}
 
 /****************/
 /* style footer */
@@ -242,5 +314,4 @@ footer {
   height: 150px;
   background-color: rgb(230, 230, 230);
   align-items: center;
-  
 }
