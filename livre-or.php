@@ -12,10 +12,15 @@ $commentaires = mysqli_fetch_all($requete, MYSQLI_ASSOC);
 //var_dump($commentaires);
 
 echo "<table>
-<caption><h1>Commentaires</h1></caption>";
+<caption><h1>";
+if(est_connecte()){
+    echo'<a href="commentaire.php"><button class="element4">Ajouter un commentaire</button> </a>';
+}
+echo"</h1></caption>";
+
 foreach ($commentaires as $indice => $commentaire) {
 
-    //setlocale(LC_TIME, "fr_FR", "french");
+    setlocale(LC_TIME, "fr_FR", "french");
     $date = strftime("%A %d %B %G à %X", strtotime($commentaire['date']));
 
     echo " 
@@ -25,14 +30,12 @@ foreach ($commentaires as $indice => $commentaire) {
     <tbody>
     <tr>
         <td>" . $commentaire['commentaire'] . "</td>
-    </tr>";
+    </tr></tbody>";
 }
 
-echo "</tbody><tfoot>";
+echo "<tfoot>";
     
-    if(est_connecte()){
-        echo'<a href="commentaire.php"><button>Ajouter un commentaire</button> </a>';
-    }
+   
  echo"</tfoot> </table>";
      
 

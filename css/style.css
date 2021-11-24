@@ -85,6 +85,16 @@ header {
   color: aliceblue;
   border-radius: 10px;
 }
+.messageok {
+  text-align: center;
+  border: 1px solid black;
+  height: 80px;
+  padding: 30px;
+  margin-top: 10px;
+  background-color: dodgerblue;
+  color: aliceblue;
+  border-radius: 10px;
+}
 .submitbutton {
   background-color: blue;
   color: white;
@@ -212,6 +222,15 @@ th {
 td {
     text-align: center;
 }
+.element4{
+  width: 400px;
+  border-radius: 10px;
+  height: 50px;
+  font-size: xx-large;
+  background: linear-gradient(to bottom right, #3f87a6, #fff);
+  color: azure;
+  cursor: pointer;
+} 
 
 
 /****************/
