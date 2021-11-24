@@ -11,12 +11,11 @@ $commentaires = mysqli_fetch_all($requete, MYSQLI_ASSOC);
 
 //var_dump($commentaires);
 
-echo "<table>
-<caption><h1>";
+echo "<h1 class='ajout'>";
 if(est_connecte()){
     echo'<a href="commentaire.php"><button class="element4">Ajouter un commentaire</button> </a>';
 }
-echo"</h1></caption>";
+echo"</h1>";
 
 foreach ($commentaires as $indice => $commentaire) {
 
@@ -24,20 +23,15 @@ foreach ($commentaires as $indice => $commentaire) {
     $date = strftime("%A %d %B %G à %X", strtotime($commentaire['date']));
 
     echo " 
+    <table>
     <thead>
     <th>Posté le <i class='color'>" . $date . "</i> par <i class='color'>" . $commentaire['login'] . "</i> </th>
     </thead>
     <tbody>
     <tr>
         <td>" . $commentaire['commentaire'] . "</td>
-    </tr></tbody>";
+    </tr></tbody> </table>";
 }
-
-echo "<tfoot>";
-    
-   
- echo"</tfoot> </table>";
-     
 
 
 
