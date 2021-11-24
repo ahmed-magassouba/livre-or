@@ -20,7 +20,7 @@ foreach ($commentaires as $indice => $commentaire) {
 
     echo " 
     <thead>
-    <th>Posté le " . $date . " par " . $commentaire['login'] . " </th>
+    <th>Posté le <i class='color'>" . $date . "</i> par <i class='color'>" . $commentaire['login'] . "</i> </th>
     </thead>
     <tbody>
     <tr>
@@ -28,14 +28,19 @@ foreach ($commentaires as $indice => $commentaire) {
     </tr>";
 }
 
-echo "</tbody>
+echo "</tbody><tfoot>";
+    
+    if(est_connecte()){
+        echo'<a href="commentaire.php"><button>Ajouter un commentaire</button> </a>';
+    }
+ echo"</tfoot> </table>";
+     
 
-</table>";
 
-if (est_connecte()) :
+
 ?>
-    <a href="commentaire.php"><button>Ajouter un commentaire</button> </a>
-<?php endif; ?>
+    
+
 
 
 <!-- DELETE commentaires FROM `commentaires` INNER JOIN utilisateurs ON utilisateurs.id=commentaires.id_utilisateur WHERE commentaire -->
@@ -44,3 +49,4 @@ if (est_connecte()) :
 require 'footer.php';
 
 ?>
+

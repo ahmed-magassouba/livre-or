@@ -24,6 +24,17 @@ if (!empty($_POST)) {
     $passwordp = strip_tags($_POST['password']);
     $confirm_password = strip_tags($_POST['confirm-password']);
 
+    // if ($loginp != $login) {
+
+    //     // on verifi si on a un login correspondant 
+    //     $sqlVerif =  "SELECT * FROM utilisateurs WHERE login = '$loginp'";
+    //     $select = mysqli_query($bdd, $sqlVerif);
+
+    //     //si on a une ligne correspondant a notre requete
+    //     if (mysqli_num_rows($select)) {
+    //         $message = "Ce login existe déjà , choisissez un autre";
+    //     }
+    // } else 
     if (password_verify($confirm_password, $passwordp) || $confirm_password == $passwordp) {
         // $passwordp = password_hash($_POST['password'], PASSWORD_ARGON2I);
         //Requète sql pour mettre a jour les informations dans la base de donnée
@@ -36,8 +47,8 @@ if (!empty($_POST)) {
         // $_SESSION['user-connecte']['password'] = $passwordp;
 
         // var_dump($requete);
-       // header('Location: index.php ');
-        //exit();
+        header('Location: index.php ');
+        exit();
     } else {
         $message = "Votre mot de passe est incorrect";
     }
@@ -53,7 +64,7 @@ if (!empty($_POST)) {
         <?php endif; ?>
 
         <form class="formcon" action="profil.php" method="POST">
-            <fieldset class="fieldsetcon">
+            <fieldset class="fieldsetprofil">
                 <div>
                     <legend>Profil</legend>
                 </div>
@@ -74,8 +85,14 @@ if (!empty($_POST)) {
                     <input class="submitbutton" type="submit" value="Mettre a jour mon profil">
                 </div>
 
+
+
             </fieldset>
         </form>
+
+    </div>
+    <div>
+        <a href="index.php"><button class="element3">Annuler</button></a>
     </div>
 </section>
 

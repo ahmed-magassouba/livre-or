@@ -26,31 +26,32 @@ if (!empty($_POST['commentaire']) && isset($_POST['commentaire'])) {
 } else {
     $message = "vous n'avez saisi aucun message";
 }
+
+
 //var_dump($_POST);
 
 //var_dump($_SESSION);
 
 
-
 ?>
 <section class="formcommentaire">
+    <?php if ($message) : ?><p class="messagealert"> <?= $message; ?></p>
+    <?php endif; ?>
+
     <form class="formcom" action="" method="POST">
 
-        <div>
-            <input class="comment" type="textarea" name="commentaire" id="commentaire" placeholder="Ecrivez votre commentaire">
-        </div>
-
-        <div class="element">
-            <div>
-                <input class="element1"  type="submit" value="Publier">
-            </div>
-
-            <div>
-                <a  href="livre-or.php"><button class="element2">Annuler</button></a>
-            </div>
-        </div>
+        <input class="comment" type="textarea" name="commentaire" id="commentaire" placeholder="Ecrivez votre commentaire">
+        <input class="element1" type="submit" value="Publier">
 
     </form>
+
+
+    <div>
+        <a href="livre-or.php"><button class="element2">Annuler</button></a>
+    </div>
+
+
+
 </section>
 <?php
 
