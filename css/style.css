@@ -276,7 +276,7 @@ table {
   font-size: 0.8rem;
   margin: auto;
   padding: 30px;
-  width: 40%;
+  width: 50%;
   box-shadow: 24px 24px 48px #666666, -24px -24px 48px #ffffff;
 }
 
@@ -284,7 +284,6 @@ td,
 th {
   border: 1px solid rgb(190, 190, 190);
   padding: 5px 10px;
-  height: 100px;
 }
 
 .element4 {
