@@ -10,7 +10,9 @@ $message1 = null;
 //on verifie l'etat du contenu de notre input
 if (!empty($_POST['commentaire']) && isset($_POST['commentaire'])) {
 
-    $commentaire = strip_tags($_POST['commentaire']);
+    // La fonction nl2br pour faire respecté le passage a la ligne que l'utilisateur fera
+    $commentaire = nl2br($_POST['commentaire']);
+    
     $id =  $_SESSION['user-connecte']['id'];
     date_default_timezone_set('Europe/Paris');
     $date = date('Y-m-d H:i:s');
