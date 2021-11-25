@@ -16,7 +16,6 @@ require 'header.php';
             </a>
         </div>
 
-        </div>
     <?php else : ?>
         <div class="">
             <a class="lien" href="connexion.php">
