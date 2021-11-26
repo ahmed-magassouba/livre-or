@@ -22,7 +22,7 @@ if (!empty($_POST)) {
 
     //les informations qui seront saisi par l'utilisateur pour les modifications
     $loginp =  strip_tags($_POST['login']);
-    $passworndp = strip_tags($_POST['password']);
+    $passwordp = strip_tags($_POST['password']);
     $confirm_password = strip_tags($_POST['confirm-password']);
     
     
