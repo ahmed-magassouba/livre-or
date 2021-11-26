@@ -23,13 +23,13 @@ if (!empty($_POST)) {
     //les informations qui seront saisi par l'utilisateur pour les modifications
     $loginp =  strip_tags($_POST['login']);
     $passworndp = strip_tags($_POST['password']);
-    $passwordp =  password_hash($passworndp, PASSWORD_ARGON2I);
     $confirm_password = strip_tags($_POST['confirm-password']);
-
-
-    if (password_verify($confirm_password,$passwordp) || $confirm_password == $passwordp) {
-
+    
+    
+    if ($confirm_password == $passwordp) {
+        
         if ($loginp == $login) {
+            $passwordp =  password_hash($passworndp, PASSWORD_ARGON2I);
 
             // $passwordp = password_hash($_POST['password'], PASSWORD_ARGON2I);
             //Requète sql pour mettre a jour les informations dans la base de donnée
