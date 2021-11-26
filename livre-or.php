@@ -12,10 +12,10 @@ $commentaires = mysqli_fetch_all($requete, MYSQLI_ASSOC);
 //var_dump($commentaires);
 
 echo "<h1 class='ajout'>";
-if(est_connecte()){
-    echo'<a href="commentaire.php"><button class="element4">Ajouter un commentaire</button> </a>';
+if (est_connecte()) {
+    echo '<a href="commentaire.php"><button class="element4">Ajouter un commentaire</button> </a>';
 }
-echo"</h1>";
+echo "</h1>";
 
 foreach ($commentaires as $indice => $commentaire) {
 
@@ -36,7 +36,7 @@ foreach ($commentaires as $indice => $commentaire) {
 
 
 ?>
-    
+
 
 
 
@@ -46,4 +46,3 @@ foreach ($commentaires as $indice => $commentaire) {
 require 'footer.php';
 
 ?>
-

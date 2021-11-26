@@ -22,11 +22,12 @@ if (!empty($_POST)) {
 
     //les informations qui seront saisi par l'utilisateur pour les modifications
     $loginp =  strip_tags($_POST['login']);
-    $passwordp = strip_tags($_POST['password']);
+    $passworndp = strip_tags($_POST['password']);
+    $passwordp =  password_hash($passworndp, PASSWORD_ARGON2I);
     $confirm_password = strip_tags($_POST['confirm-password']);
 
-    
-    if (password_verify($confirm_password, $passwordp) || $confirm_password == $passwordp) {
+
+    if (password_verify($confirm_password,$passwordp) || $confirm_password == $passwordp) {
 
         if ($loginp == $login) {
 
@@ -38,12 +39,11 @@ if (!empty($_POST)) {
             //mettre a jour les infos dans ma session
             $_SESSION['user-connecte']['login'] = $loginp;
             $_SESSION['user-connecte']['password'] = $passwordp;
-   
+
             // var_dump($requete);
             header('Location: index.php ');
             exit();
         } elseif ($loginp != $login) {
-
 
             // on verifi si on a un login correspondant 
             $sqlVerif =  "SELECT * FROM utilisateurs WHERE login = '$loginp'";
@@ -98,7 +98,7 @@ if (!empty($_POST)) {
                 </div>
 
                 <div>
-                    <input class="inputelmt" type="password" name="password" value="<?= htmlentities($password); ?>" raquired>
+                    <input class="inputelmt" type="password" name="password" placeholder="***********" required>
                 </div>
 
                 <div>
