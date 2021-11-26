@@ -11,12 +11,12 @@ $message1 = null;
 if (!empty($_POST['commentaire']) && isset($_POST['commentaire'])) {
 
     // La fonction nl2br pour faire respecté le passage a la ligne que l'utilisateur fera
-    $commentaire = nl2br($_POST['commentaire']);
-    
+    $commentaire = nl2br(addslashes($_POST['commentaire']));
+
     $id =  $_SESSION['user-connecte']['id'];
     date_default_timezone_set('Europe/Paris');
     $date = date('Y-m-d H:i:s');
-    echo $date;
+    $date;
     //requète pour l'insert
     $sql = "INSERT INTO `commentaires`( `commentaire`, `id_utilisateur`,`date`) VALUES ('$commentaire', '$id' ,'$date')";
     var_dump($sql);

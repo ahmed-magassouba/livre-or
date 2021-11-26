@@ -19,40 +19,64 @@ $message = null;
 
 
 if (!empty($_POST)) {
+
     //les informations qui seront saisi par l'utilisateur pour les modifications
     $loginp =  strip_tags($_POST['login']);
     $passwordp = strip_tags($_POST['password']);
     $confirm_password = strip_tags($_POST['confirm-password']);
 
-    // if ($loginp != $login) {
-
-    //     // on verifi si on a un login correspondant 
-    //     $sqlVerif =  "SELECT * FROM utilisateurs WHERE login = '$loginp'";
-    //     $select = mysqli_query($bdd, $sqlVerif);
-
-    //     //si on a une ligne correspondant a notre requete
-    //     if (mysqli_num_rows($select)) {
-    //         $message = "Ce login existe déjà , choisissez un autre";
-    //     }
-    // } else 
+    
     if (password_verify($confirm_password, $passwordp) || $confirm_password == $passwordp) {
-        // $passwordp = password_hash($_POST['password'], PASSWORD_ARGON2I);
-        //Requète sql pour mettre a jour les informations dans la base de donnée
-        $sql = "UPDATE `utilisateurs` SET `login`='$loginp',`password`='$passwordp' WHERE id = $id";
-        $requete = mysqli_query($bdd, $sql);
 
-        //mettre a jour les infos dans ma session
-        $_SESSION['user-connecte']['login'] = $loginp;
+        if ($loginp == $login) {
 
-        // $_SESSION['user-connecte']['password'] = $passwordp;
+            // $passwordp = password_hash($_POST['password'], PASSWORD_ARGON2I);
+            //Requète sql pour mettre a jour les informations dans la base de donnée
+            $sql = "UPDATE `utilisateurs` SET `login`='$loginp',`password`='$passwordp' WHERE id = $id";
+            $requete = mysqli_query($bdd, $sql);
 
-        // var_dump($requete);
-        header('Location: index.php ');
-        exit();
+            //mettre a jour les infos dans ma session
+            $_SESSION['user-connecte']['login'] = $loginp;
+            $_SESSION['user-connecte']['password'] = $passwordp;
+   
+            // var_dump($requete);
+            header('Location: index.php ');
+            exit();
+        } elseif ($loginp != $login) {
+
+
+            // on verifi si on a un login correspondant 
+            $sqlVerif =  "SELECT * FROM utilisateurs WHERE login = '$loginp'";
+            $select = mysqli_query($bdd, $sqlVerif);
+
+            //si on a une ligne correspondant a notre requete
+            if (mysqli_num_rows($select)) {
+                $message = "Ce login existe déjà , choisissez un autre";
+            } else {
+
+                //Requète sql pour mettre a jour les informations dans la base de donnée
+                $sql = "UPDATE `utilisateurs` SET `login`='$loginp',`password`='$passwordp' WHERE id = $id";
+                $requete = mysqli_query($bdd, $sql);
+
+                //mettre a jour les infos dans ma session
+                $_SESSION['user-connecte']['login'] = $loginp;
+                $_SESSION['user-connecte']['password'] = $passwordp;
+
+                // var_dump($requete);
+                header('Location: index.php ');
+                exit();
+            }
+        }
     } else {
         $message = "Votre mot de passe est incorrect";
     }
 }
+
+
+
+
+
+
 
 //var_dump(est_connecte());
 ?>
